@@ -42,8 +42,9 @@ window.addEventListener('navigate', event => {
 
       // assuming newWin.document.interactive means DOM ready
       return newWin.document.interactive.then(() => {
-        return newWin.document.documentElement
-          .animate({opacity: 0}, 1000).finished;
+        return newWin.document.documentElement.animate([
+          {opacity: 0}, {opacity: 1}
+        ], 1000).finished;
       });
     })
   );
