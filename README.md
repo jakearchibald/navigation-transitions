@@ -150,3 +150,4 @@ Yep, more hand-waving.
 * How does this interact with browsers that have a bf cache?
 * How should redirects be handled?
 * How should interactivity during the transition be handled?
+* During a sliding aniamtion, is it possible to switch a fake shell for the actual page mid-transition? Feels like this is something the animation API should be able to do.
