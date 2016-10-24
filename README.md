@@ -135,6 +135,8 @@ If the background of html/body is transparent, the underlying document will be v
 
 During the transition, the render-box of the documents will be limited to the viewport size. This means `html { transform: translate(0, -20px); }` on the top document will leave a 20 pixel gap at the bottom, though which the bottom document will be visible. After the transition, rendering would switch back to the regular model.
 
+We must guarantee that the new document shouldn't visibly appear until `event.window`'s reactions have completed.
+
 Apologies for the hand-waving.
 
 # Place within the navigation algorithm
