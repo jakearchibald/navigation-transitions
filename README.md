@@ -152,3 +152,5 @@ Yep, more hand-waving.
 * How should interactivity during the transition be handled?
 * During a sliding aniamtion, is it possible to switch a fake shell for the actual page mid-transition? Feels like this is something the animation API should be able to do.
 * There's no way to make the current page render on top of the new one. Might limit some transitions. Could work some magic with `z-index` on `documentElement`.
+* If another origin navigates a parent document via `window.opener`, should it receive a navigaiton event? Does making the URL available represent a security issue?
+* Bloody timing attacks. Maybe this should be strictly limited to same-origin.
