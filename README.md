@@ -76,8 +76,8 @@ window.addEventListener('navigate', event => {
           newWin.document.documentElement.animate(
             event.type == 'back' ? fromLeft : fromRight, 500
           ).finished,
-          newWin.document.documentElement.animate(
-            event.type == 'back' ? toLeft : toRight, 500
+          document.documentElement.animate(
+            event.type == 'back' ? toRight : toLeft, 500
           ).finished
         ]);
       });
