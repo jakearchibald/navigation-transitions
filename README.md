@@ -19,7 +19,7 @@ window.addEventListener('navigate', event => {
 });
 ```
 
-The above event fires when the document is being navigated in a way that would replace the current document.
+The above event fires when the document is being navigated to a same-origin URL in a way that would replace the current document.
 
 * `event.type` - One of the following strings:
   * `back` - User is navigating back.
@@ -27,8 +27,10 @@ The above event fires when the document is being navigated in a way that would r
   * `reload` - Reload-triggered navigation.
   * `normal` - Not one of the above.
 * `event.url` - The URL being navigated to.
-* `event.window` - A promise for a `WindowProxy` being navigated to, unless the navigation is cross-origin or fails.
+* `event.window` - A promise for a `WindowProxy` being navigated to. Resolves with undefined if a cross-origin redirect is encountered. Rejects if the navigation fails. Cancels if the navigation cancels (dependent on cancelable promises).
 * `event.waitUntil(promise)` - Keep this document alive and potentially visible until `promise` settles.
+
+**Note:** The same-origin restrictions are to avoid new URL leaks and timing attacks.
 
 # Simple cross-fade transition
 
@@ -152,5 +154,3 @@ Yep, more hand-waving.
 * How should interactivity during the transition be handled?
 * During a sliding aniamtion, is it possible to switch a fake shell for the actual page mid-transition? Feels like this is something the animation API should be able to do.
 * There's no way to make the current page render on top of the new one. Might limit some transitions. Could work some magic with `z-index` on `documentElement`.
-* If another origin navigates a parent document via `window.opener`, should it receive a navigaiton event? Does making the URL available represent a security issue?
-* Bloody timing attacks. Maybe this should be strictly limited to same-origin.
