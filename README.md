@@ -2,7 +2,7 @@
 
 If you want to transition between pages, your current option is to fetch the new page with JavaScript, update the URL with `pushState`, and animate between the two.
 
-Having to reimplement navigation for a simple transition is a large task. This proposal provides a low-level way to create transitions while maintaining regular browser navigation.
+Having to reimplement navigation for a simple transition is a bit much, often leading developers to use large frameworks where they aren't needed. This proposal provides a low-level way to create transitions while maintaining regular browser navigation.
 
 # Goals
 
@@ -88,7 +88,7 @@ window.addEventListener('navigate', event => {
 
 # Immediate Slide in/out transition
 
-The above examples don't begin to animate until the new page has fetched and become interactive. That's ok, but this API allows the current page to transition while the new page is being fetch, improving the perception of performance:
+The above examples don't begin to animate until the new page has fetched and become interactive. That's ok, but this API allows the current page to transition while the new page is being fetched, improving the perception of performance:
 
 ```js
 window.addEventListener('navigate', event => {
