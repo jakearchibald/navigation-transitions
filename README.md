@@ -128,9 +128,11 @@ window.addEventListener('navigate', event => {
 
 # Rendering
 
-During the transition, the new document will be rendered on top of the current one. If the background of html/body is transparent, the old document will be visible through it.
+During the transition, the document with the highest `z-index` on the `documentElement` will render on top. If `z-index`es are equal, the entering document will render on top.
 
-During the transition, the render-box of the new document will be limited to the viewport size. This means `html { transform: translate(0, -20px); }` on the new document will leave a 20 pixel gap at the bottom, though which the current document will be visible. After the transition, rendering would switch back to the regular model.
+If the background of html/body is transparent, the underlying document will be visible through it. If neither document renders something for a given pixel, the browser's default background is shown (usually white).
+
+During the transition, the render-box of the documents will be limited to the viewport size. This means `html { transform: translate(0, -20px); }` on the top document will leave a 20 pixel gap at the bottom, though which the bottom document will be visible. After the transition, rendering would switch back to the regular model.
 
 Apologies for the hand-waving.
 
@@ -153,4 +155,3 @@ Yep, more hand-waving.
 * How should redirects be handled?
 * How should interactivity during the transition be handled?
 * During a sliding animation, is it possible to switch a fake shell for the actual page mid-transition? Feels like this is something the animation API should be able to do.
-* There's no way to make the current page render on top of the new one. Might limit some transitions. Could work some magic with `z-index` on `documentElement`.
