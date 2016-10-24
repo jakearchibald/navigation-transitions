@@ -152,5 +152,5 @@ Yep, more hand-waving.
 * How does this interact with browsers that have a bf cache?
 * How should redirects be handled?
 * How should interactivity during the transition be handled?
-* During a sliding aniamtion, is it possible to switch a fake shell for the actual page mid-transition? Feels like this is something the animation API should be able to do.
+* During a sliding animation, is it possible to switch a fake shell for the actual page mid-transition? Feels like this is something the animation API should be able to do.
 * There's no way to make the current page render on top of the new one. Might limit some transitions. Could work some magic with `z-index` on `documentElement`.
