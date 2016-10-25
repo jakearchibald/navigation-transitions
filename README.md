@@ -110,7 +110,8 @@ window.addEventListener('navigate', event => {
   const directionMultiplier = event.type == 'back' ? -1 : 1;
 
   pageShell.style.transform = `translate(${100 * directionMultiplier}%, ${-documentRect.top}px)`;
-  const slideAnim = document.documentElement.animate({
+
+  const slideAnim = document.body.animate({
     transform: `translate(${100 * directionMultiplier}%, 0)`
   }, 500);
 
@@ -127,15 +128,17 @@ window.addEventListener('navigate', event => {
 });
 ```
 
-# Rendering
+# Rendering & interactivity
 
-During the transition, the document with the highest `z-index` on the `documentElement` will render on top. If `z-index`es are equal, the entering document will render on top.
+During the transition, the document with the highest `z-index` on the `documentElement` will render on top. If `z-index`es are equal, the entering document will render on top. Both `documentElement`s will be a stacking context.
 
-If the background of html/body is transparent, the underlying document will be visible through it. If neither document renders something for a given pixel, the browser's default background is shown (usually white).
+If the background of html/body is transparent, the underlying document will be visible through it. Beneath both documents is the browser's default background (usually white).
 
-During the transition, the render-box of the documents will be limited to the viewport size. This means `html { transform: translate(0, -20px); }` on the top document will leave a 20 pixel gap at the bottom, though which the bottom document will be visible. After the transition, rendering would switch back to the regular model.
+During the transition, the render-box of the documents will be clipped to the viewport size. This means `html { transform: translate(0, -20px); }` on the top document will leave a 20 pixel gap at the bottom, though which the bottom document will be visible. After the transition, rendering would switch back to the regular model.
 
-We must guarantee that the new document shouldn't visibly appear until `event.window`'s reactions have completed.
+We must guarantee that the new document doesn't visibly appear until `event.window`'s reactions have completed.
+
+As for interactivity, both documents will be at least scrollable, although developers could prevent this using `pointer-events: none` or similar.
 
 Apologies for the hand-waving.
 
