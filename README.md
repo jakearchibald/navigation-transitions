@@ -8,7 +8,7 @@ Having to reimplement navigation for a simple transition is a bit much, often le
 
 * Enable complex transitions.
 * Allow transitions to start while the next page is being fetched.
-* Allow transisitions to differ between link-clicking, back button, forward button, reload button.
+* Allow transitions to differ between link-clicking, back button, forward button, reload button.
 * Allow transitions to cater for a non-zero scroll position in the navigated-to page.
 
 # API sketch
@@ -149,7 +149,7 @@ Yep, more hand-waving.
 
 # Potential issues & questions
 
-* Can animations be reliably syncronised between documents? They at least share an event loop.
+* Can animations be reliably synchronised between documents? They at least share an event loop.
 * Any issues firing this for nested contexts?
 * What if the promise passed to `waitUntil` never resolves? Feels like it should have a timeout.
 * What happens on low-end devices that can't display two documents at once?
