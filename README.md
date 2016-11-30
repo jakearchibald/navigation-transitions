@@ -47,7 +47,7 @@ The `navigate` event fires when the document is being navigated in a way that wo
   * `normal` - Not one of the above.
 * `event.url` - The URL being navigated to. An empty string if the URL is of another origin.
 * `event.newWindow` - A promise for a `WindowProxy` being navigated to. Resolves with `undefined` if another origin is involved in the navigation (i.e., the initial URL or redirects). Rejects if the navigation fails. Cancels if the navigation cancels (dependent on cancelable promises).
-* `event.transitionUntil(promise)` - Keep this document alive and potentially visible until `Promise` settles, or once another origin is involved in the navigation (i.e., the initial URL or redirects).
+* `event.transitionUntil(promise)` - Keep this document alive and potentially visible until `promise` settles, or once another origin is involved in the navigation (i.e., the initial URL or redirects).
 
 **Note:** The same-origin restrictions are to avoid new URL leaks and timing attacks.
 
@@ -173,7 +173,7 @@ Yep, more hand-waving.
 
 * Can transitions/animations be reliably synchronised between documents? They at least share an event loop.
 * Any issues with firing transitions/animations for nested contexts?
-* What if the `Promise` passed to `transitionUntil` never resolves? Feels like it should have a timeout.
+* What if the promise passed to `transitionUntil` never resolves? Feels like it should have a timeout.
 * What happens on low-end devices that can't display two documents at once?
 * What if the navigation is cancelled (e.g., use of a `Content-Disposition` response header). `event.newWindow` could also cancel.
 * How does this interact with browsers that have a [back-forward cache](https://developer.mozilla.org/en-US/docs/Working_with_BFCache)?
