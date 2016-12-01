@@ -148,7 +148,7 @@ window.addEventListener('navigate', event => {
 
 During the transition, the document with the highest `z-index` on the `documentElement` will render on top. If `z-index`es are equal, the entering document will render on top. Both `documentElement`s will generate stacking contexts.
 
-If the background of `html`/`body` is transparent, the underlying document will be visible through it. Beneath each document is the browser's default background (usually white).
+If the background of `html`/`body` is transparent, the underlying document will be visible through it. Beneath both documents is the browser's default background (usually white).
 
 During the transition, the render-box of the documents will be clipped to that of the viewport size. This means `html { transform: translate(0, -20px); }` on the top document will leave a 20-pixel gap at the bottom, through which the bottom document will be visible. After the transition, rendering switches back to using the regular model.
 
