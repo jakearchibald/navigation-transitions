@@ -72,7 +72,7 @@ window.addEventListener('navigate', event => {
 
 ```js
 window.addEventListener('navigate', event => {
-  if (event.type == 'reload') return;
+  if (event.reason == 'reload') return;
 
   const fromRight = [
     {transform: 'translate(100%, 0)'},
@@ -94,10 +94,10 @@ window.addEventListener('navigate', event => {
       return newWin.document.interactive.then(() => {
         return Promise.all([
           newWin.document.documentElement.animate(
-            event.type == 'back' ? fromLeft : fromRight, 500
+            event.reason == 'back' ? fromLeft : fromRight, 500
           ).finished,
           document.documentElement.animate(
-            event.type == 'back' ? toRight : toLeft, 500
+            event.reason == 'back' ? toRight : toLeft, 500
           ).finished
         ]);
       });
@@ -112,7 +112,7 @@ The above examples don't begin to animate until the new page has fetched and bec
 
 ```js
 window.addEventListener('navigate', event => {
-  if (event.type == 'reload') return;
+  if (event.reason == 'reload') return;
 
   const newURL = new URL(event.url);
 
@@ -124,7 +124,7 @@ window.addEventListener('navigate', event => {
   const pageShell = createPageShellFor(event.url);
   document.body.appendChild(pageShell);
 
-  const directionMultiplier = event.type == 'back' ? -1 : 1;
+  const directionMultiplier = event.reason == 'back' ? -1 : 1;
 
   pageShell.style.transform = `translate(${100 * directionMultiplier}%, ${-documentRect.top}px)`;
 
