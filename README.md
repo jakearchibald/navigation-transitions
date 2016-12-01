@@ -146,7 +146,7 @@ window.addEventListener('navigate', event => {
 
 # Rendering & interactivity
 
-During the transition, the document with the highest `z-index` on the `documentElement` will render on top. If `z-index`es are equal, the entering document will render on top. Both `documentElement`s will have stacking contexts.
+During the transition, the document with the highest `z-index` on the `documentElement` will render on top. If `z-index`es are equal, the entering document will render on top. Both `documentElement`s will generate stacking contexts.
 
 If the background of `html`/`body` is transparent, the underlying document will be visible through it. Beneath each document is the browser's default background (usually white).
 
