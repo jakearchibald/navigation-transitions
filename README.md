@@ -13,8 +13,6 @@ Having to reimplement navigation for a simple transition is a bit much, often le
 
 # Experiments, talks & reading materials
 
-[![Animation from Jake Archibald's talk, Future App Model: Advanced Service Worker (Chrome Dev Summit 2016)](https://bitsofco.de/content/images/2016/11/ezgif.com-optimize.gif "Animation from Jake Archibald's talk, Future App Model: Advanced Service Worker (Chrome Dev Summit 2016)")](https://www.youtube.com/watch?v=J2dOTKBoTL4&t=1907)
-
 ## Web Navigation Transitions (2014): CSS-based experiment by Google Chrome team
 * [**Spec:** Initial (deprecated) spec for experimental Web Navigation Transitions prototype (2014)](https://docs.google.com/document/d/17jg1RRL3RI969cLwbKBIcoGDsPwqaEdBxafGNYGwiY4/edit)
 * [**Talk (video):** Ryan Schoen's talk, Wicked Fast: Performance investments (Chrome Dev Summit 2014)](https://www.youtube.com/watch?v=v0xRTEf-ytE)
@@ -27,8 +25,7 @@ Having to reimplement navigation for a simple transition is a bit much, often le
 * [**Code samples:** Source code of "Gaia Nagiator" Web Navigation Transitions examples](https://github.com/Cwiiis/gaia-navigator)
 
 ## Web Navigation Transitions (2016): New proposal by Jake Archibald (Google Chrome)
-* [**Talk (video):** Jake Archibald's talk, Future App Model: Advanced Service Worker (Chrome Dev Summit 2016)](https://www.youtube.com/watch?v=J2dOTKBoTL4&t=1815)
-    * [**Demo (video)** Web Navigation Transitions in Chrome on Android](https://www.youtube.com/watch?v=J2dOTKBoTL4&t=1907)
+* [**Talk (video):** Intro to this proposal (Chrome Dev Summit 2016)](https://www.youtube.com/watch?v=J2dOTKBoTL4&t=1815)
 
 # API sketch
 
