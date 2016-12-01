@@ -43,8 +43,8 @@ The `navigate` event fires when the document is being navigated in a way that wo
   * `reload` - Reload-triggered navigation.
   * `normal` - Not one of the above.
 * `event.url` - The URL being navigated to. An empty string if the URL is of another origin.
-* `event.newWindow` - A promise for a `WindowProxy` being navigated to. Resolves with `undefined` if another origin is involved in the navigation (i.e., the initial URL or redirects). Rejects if the navigation fails. Cancels if the navigation cancels (dependent on cancelable promises).
-* `event.transitionUntil(promise)` - Keep this document alive and potentially visible until `promise` settles, or once another origin is involved in the navigation (i.e., the initial URL or redirects).
+* `event.newWindow` - A promise for a `WindowProxy` being navigated to. Resolves with `undefined` if another origin is involved in the navigation (i.e., the initial URL or URLs of redirects). Rejects if the navigation fails. Cancels if the navigation cancels (dependent on cancelable promises).
+* `event.transitionUntil(promise)` - Keep this document alive and potentially visible until `promise` settles, or once another origin is involved in the navigation (i.e., the initial URL or URLs of redirects).
 
 **Note:** The same-origin restrictions are to avoid new URL leaks and timing attacks.
 
