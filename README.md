@@ -37,7 +37,8 @@ window.addEventListener('navigate', event => {
 
 The `navigate` event fires when the document is being navigated in a way that would replace the current document.
 
-* `event.type` - One of the following strings:
+* `event.type` - The name of this event, `navigate`.
+* `event.reason` - The way in which the document is being navigated to. One of the following strings:
   * `back` - User is navigating back.
   * `forward` - User is navigating forward.
   * `reload` - Reload-triggered navigation.
