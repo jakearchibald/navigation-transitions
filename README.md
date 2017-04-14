@@ -22,7 +22,7 @@ Having to reimplement navigation for a simple transition is a bit much, often le
 ## Web Navigation Transitions (2015): CSS-based proposal by Chris Lord (Mozilla, Firefox OS)
 * [**Article:** Web Navigation Transitions by Chris Lord (Mozilla)](http://chrislord.net/index.php/2015/04/24/web-navigation-transitions/)
 * [**Examples:** Web Navigation Transitions examples (emulated with CSS Animations, custom CSS media queries, events, `<iframe>`s, `postMessage`, etc.)](http://chrislord.net/files/mozilla/gaia-navigator/examples/)
-* [**Code samples:** Source code of "Gaia Nagiator" Web Navigation Transitions examples](https://github.com/Cwiiis/gaia-navigator)
+* [**Code samples:** Source code of "Gaia Navigator" Web Navigation Transitions examples](https://github.com/Cwiiis/gaia-navigator)
 
 ## Web Navigation Transitions (2016): New proposal by Jake Archibald (Google Chrome)
 * [**Talk (video):** Intro to this proposal (Chrome Dev Summit 2016)](https://www.youtube.com/watch?v=J2dOTKBoTL4&t=1815)
